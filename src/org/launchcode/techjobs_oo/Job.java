@@ -27,6 +27,30 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
+    public String toString() {
+        String name = this.name;
+        String employer = this.employer.getValue();
+        String location = this.location.getValue();
+        String positionType = this.positionType.getValue();
+        String coreCompetency = this.coreCompetency.getValue();
+        if (this.name == "") {
+            name = "Data not available";
+        }
+        if (this.employer.toString() == "") {
+            employer = "Data not available";
+        }
+        if (this.location.toString() == "") {
+            location = "Data not available";
+        }
+        if (this.positionType.toString() == "") {
+            positionType = "Data not available";
+        }
+        if (this.coreCompetency.toString() == "") {
+            coreCompetency = "Data not available";
+        }
+        return "\nID: " + id + "\nName: " + name + "\nEmployer: " + employer + "\nLocation: " + location + "\nPosition Type: " + positionType + "\nCore Competency: " + coreCompetency + "\n";
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
